@@ -1,0 +1,90 @@
+# Units are in milimeters and degrees. 
+# Orientations are axis-angle representations [x, y, z, deg]
+# All poses are relative to the robotiq_3f_frame
+AGS_palm:
+  position: [0.0, 41.27, 0.0]
+  orientation: [0.0, 0.0, 1.0, 0.0]
+  part_filename: "AGS_palm"
+  supposed_parent_link: "robotiq_3f_frame"
+
+# Finger 000
+AGS_finger-base:
+  position: [-40.56, 61.12, 36.51]
+  orientation: [0.0, 0.0, 1.0, 0.0]
+  part_filename: "AGS_finger-base"
+  supposed_parent_link: "AGS_palm"
+
+AGS_finger-prox:
+  position: [-44.53, 82.63, 36.51]
+  orientation: [0.85, -0.53, 0.0, 180.0]
+  part_filename: "AGS_finger-prox"
+  supposed_parent_link: "AGS_finger-base"
+
+AGS_finger-med:
+  position: [-74.06, 145.90, 28.47]
+  orientation: [0.85, -0.53, 0.0, 180.0]
+  part_filename: "AGS_finger-med"
+  supposed_parent_link: "AGS_finger-prox"
+
+AGS_finger-dist:
+  position: [-86.22, 167.42, 36.51]
+  orientation: [-0.58, 0.58, 0.58, 120.0]
+  part_filename: "AGS_finger-dist"
+  supposed_parent_link: "AGS_finger-med"
+
+# Finger 001
+AGS_finger-base001:
+  position: [-40.56, 61.12, -36.51]
+  orientation: [0.0, 0.0, 1.0, 0.0]
+  part_filename: "AGS_finger-base"
+  supposed_parent_link: "AGS_palm"
+
+AGS_finger-prox001:
+  position: [-44.53, 82.63, -36.51]
+  orientation: [0.85, -0.53, 0.0, 180.0]
+  part_filename: "AGS_finger-prox"
+  supposed_parent_link: "AGS_finger-base001"
+
+AGS_finger-med001:
+  position: [-74.47, 146.55, -44.56]
+  orientation: [0.85, -0.53, 0.0, 180.0]
+  part_filename: "AGS_finger-med"
+  supposed_parent_link: "AGS_finger-prox001"
+
+AGS_finger-dist001:
+  position: [-86.66, 168.06, -36.51]
+  orientation: [-0.58, 0.58, 0.58, 120.0]
+  part_filename: "AGS_finger-dist"
+  supposed_parent_link: "AGS_finger-med001"
+
+# Finger 002
+AGS_finger-base002:
+  position: [40.51, 61.12, 0.0]
+  orientation: [0.0, 1.0, 0.0, 180.0]
+  part_filename: "AGS_finger-base"
+  supposed_parent_link: "AGS_palm"
+
+AGS_finger-prox002:
+  position: [44.48, 82.63, 0.0]
+  orientation: [0.0, 0.0, -1.0, 116.19]
+  part_filename: "AGS_finger-prox"
+  supposed_parent_link: "AGS_finger-base002"
+
+AGS_finger-med002:
+  position: [74.01, 145.90, 8.05]
+  orientation: [0.0, 0.0, -1.0, 120.0]
+  part_filename: "AGS_finger-med"
+  supposed_parent_link: "AGS_finger-prox002"
+
+AGS_finger-dist002:
+  position: [86.17, 167.42, 0.0]
+  orientation: [0.58, 0.58, 0.58, 240.0]
+  part_filename: "AGS_finger-dist"
+  supposed_parent_link: "AGS_finger-med002"
+
+# Wrist
+AGS_wrist:
+  position: [0.0, 0.0, 0.0]
+  orientation: [-0.5, 0.0, 0.87, 180.0]
+  part_filename: "AGS_wrist"
+  supposed_parent_link: "robotiq_3f_frame"

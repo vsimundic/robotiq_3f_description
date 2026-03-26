@@ -1,0 +1,17 @@
+<launch>
+  <!-- Load the URDF from the xacro file into the parameter server -->
+  <param name="robot_description"
+         command="$(find xacro)/xacro $(find robotiq_3f_description)/urdf/robotiq_3f_gripper.urdf.xacro"/>
+
+  <!-- Publish joint states (GUI slider) so all joints are visible in RViz -->
+  <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui"
+        type="joint_state_publisher_gui"/>
+
+  <!-- Publish TF transforms from the robot_description -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher"
+        type="robot_state_publisher"/>
+
+  <!-- Launch RViz with a default config if one exists, otherwise plain -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find robotiq_3f_description)/config/rviz_config.rviz"
+        required="false"/>
+</launch>
