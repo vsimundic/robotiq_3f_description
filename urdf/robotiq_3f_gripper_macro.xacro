@@ -13,7 +13,7 @@
       <xacro:robotiq_3f_gripper prefix="gripper_" parent="tool0"/>
   -->
 
-  <xacro:macro name="robotiq_3f_gripper" params="prefix:='' parent">
+  <xacro:macro name="robotiq_3f_gripper" params="prefix:='' parent *origin">
 
     <!-- Root frame -->
     <link name="${prefix}robotiq_3f_frame"/>
@@ -21,7 +21,8 @@
     <joint name="${prefix}${parent}_to_robotiq_3f_frame_joint" type="fixed">
       <parent link="${parent}"/>
       <child  link="${prefix}robotiq_3f_frame"/>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <xacro:insert_block name="origin" />
+      <!-- <origin xyz="0 0 0" rpy="0 0 0"/> -->
     </joint>
 
     <!-- AGS_palm -->
